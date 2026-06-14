@@ -98,6 +98,8 @@ cd lerobot
 
 For training, evaluation, and deployment instructions, see the MolmoAct2 LeRobot documentation at [`docs/source/molmoact2.mdx`](https://github.com/allenai/lerobot/blob/molmoact2-policy/docs/source/molmoact2.mdx). To reproduce the original LIBERO benchmark results exactly with the v0.5.1 evaluation stack, use the pinned inference branch [`allenai/lerobot:molmoact2-hf-inference`](https://github.com/allenai/lerobot/tree/molmoact2-hf-inference) with instructions in [MolmoAct2 README](https://github.com/allenai/lerobot/tree/molmoact2-hf-inference#molmoact2).
 
+We also open-source the original MolmoAct2 experiment scripts under [`experiments/`](experiments/). These cover training and evaluation replication, depth annotation, Hugging Face checkpoint conversion, and fine-tuning on new LeRobot datasets. See [`experiments/README.md`](experiments/README.md) for setup and commands.
+
 ## 4. Real-world Deployment
 
 > [!WARNING]
