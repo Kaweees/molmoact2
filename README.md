@@ -39,6 +39,7 @@ MolmoAct2 is Ai2's open family of action reasoning models for robot control and 
 
 ---
 ### Updates
+- **[2026/06/13]** 🔥 We have released pre-training and post-training code and full experimental details for MolmoAct2, get started [**Here**](https://github.com/allenai/molmoact2/tree/main/experiments).
 - **[2026/06/10]** 🔥 We have setup zero-shot evaluation for MolmoAct2 (DROID and Bimanual YAM) on Maniskill simulation, get started [**Here**](https://github.com/allenai/molmoact2/tree/main/sim_eval).
 - **[2026/05/28]** 🔥 MolmoAct2 has been fully integrated into Huggingface, LeRobot official repo at [**MolmoAct2**](https://huggingface.co/docs/lerobot/main/en/molmoact2).
 - **[2026/05/19]** 🔥 We've also released MolmoAct2-Cortex evaluation rollouts on YAM bimanual setups (useful for failure annotation and reward model training) at [**Policy Rollouts**](https://huggingface.co/collections/allenai/molmoact2-eval-rollouts).
@@ -97,6 +98,8 @@ cd lerobot
 ```
 
 For training, evaluation, and deployment instructions, see the MolmoAct2 LeRobot documentation at [`docs/source/molmoact2.mdx`](https://github.com/allenai/lerobot/blob/molmoact2-policy/docs/source/molmoact2.mdx). To reproduce the original LIBERO benchmark results exactly with the v0.5.1 evaluation stack, use the pinned inference branch [`allenai/lerobot:molmoact2-hf-inference`](https://github.com/allenai/lerobot/tree/molmoact2-hf-inference) with instructions in [MolmoAct2 README](https://github.com/allenai/lerobot/tree/molmoact2-hf-inference#molmoact2).
+
+We also open-source the original MolmoAct2 experiment scripts under [`experiments/`](experiments/). These cover training and evaluation replication, depth annotation, Hugging Face checkpoint conversion, and fine-tuning on new LeRobot datasets. See [`experiments/README.md`](experiments/README.md) for setup and commands.
 
 ## 4. Real-world Deployment
 
@@ -217,9 +220,9 @@ sudo ufw allow from <subnet> to any port 8000 proto tcp   # DROID
 sudo ufw allow from <subnet> to any port 8202 proto tcp   # YAM
 ```
 
-## 6. Coming Soon
+## 6. Pre-training and Post-training
 
-Full code for training, fine-tuning, deployment, evaluation, and more details are coming soon.
+[Full code](https://github.com/allenai/molmoact2/tree/main/experiments)
 
 ## 7. License
 
