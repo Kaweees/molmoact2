@@ -72,7 +72,6 @@ class _MolmoActHTTPClient(MolmoActClientBase):
         *,
         n_action_steps: Optional[int] = None,
         request_timeout: float = 60.0,
-        enable_cuda_graph: Optional[bool] = None,
     ) -> None:
         try:
             import requests
@@ -88,7 +87,6 @@ class _MolmoActHTTPClient(MolmoActClientBase):
         self.url = url
         self.n_action_steps = int(n_action_steps) if n_action_steps is not None else None
         self.request_timeout = request_timeout
-        self.enable_cuda_graph = enable_cuda_graph
         self._queue: list[np.ndarray] = []
 
         logger.info("%s ready | url=%s  cameras=%s",
@@ -115,8 +113,6 @@ class _MolmoActHTTPClient(MolmoActClientBase):
             qpos = np.asarray(self.state_adapter(qpos), dtype=np.float32)
 
         payload: dict = {"instruction": instruction, "state": qpos}
-        if self.enable_cuda_graph is not None:
-            payload["enable_cuda_graph"] = self.enable_cuda_graph
         for cam_key in self.schema.camera_keys:
             payload[cam_key] = extract_camera(obs, cam_key)
 
