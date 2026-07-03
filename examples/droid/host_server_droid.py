@@ -151,7 +151,7 @@ class Policy:
             AutoModelForImageTextToText.from_pretrained(
                 local_dir,
                 trust_remote_code=True,
-                torch_dtype=dtype,
+                dtype=dtype,
             )
             .to(device)
             .eval()
